@@ -19,3 +19,20 @@ function test() {
     console.log(anotherNum);
 }
 test(); 
+//Strings
+let str = 'abcd'
+console.log(str + 10);
+console.log(str +'fg');
+console.log(str == 'abcd');
+console.log(str.includes('cd'));
+console.log(str.endsWith('d'));
+console.log(str.toUpperCase());
+console.log('ABCD'.toLowerCase());
+console.log(str.substring(1, 3));
+console.log(str.slice(1, 3));
+console.log(str.padStart(5, '*'));
+console.log(str.padEnd(5, '*'));
+console.log(' fgh '.trim());
+console.log('str '.trimEnd());
+console.log(' str'.trimStart());
+console.log('abc, ijk, l'.split(','));
