@@ -1,0 +1,6 @@
+https://google.github.io/styleguide/jsguide.html
+https://medium.com/p/f26b2c71719c#17a0
+https://medium.com/@swati.developer17/javascript-learning-roadmap-2023-the-ultimate-guide-%EF%B8%8F-b13708137f42
+https://github.com/getify/You-Dont-Know-JS
+https://tahajiru.com/
+https://tahajiru.com/article/how-much-javascript-needed-before-learning-react/
