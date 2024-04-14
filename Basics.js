@@ -1,3 +1,4 @@
+'use strict';
 //Variables and Scope
 //const -> One time initialization, block scope.
 //let -> block scope.
@@ -36,3 +37,26 @@ console.log(' fgh '.trim());
 console.log('str '.trimEnd());
 console.log(' str'.trimStart());
 console.log('abc, ijk, l'.split(','));
+//Error Handling
+try {
+    throw new Error ('An Error'); //-> Error Handled
+} catch(error) {
+    console.log(error);
+}
+//throw new Error ('An Error'); -> No catch block for error handling
+console.log('An Error');
+//Comments
+/* Multi
+Line
+Comment */
+console.error('error message');
+console.debug('Debug Message');
+console.table([[1, 2], [3, 4]]);
+console.count();
+console.count();
+console.countReset();
+console.count('key');
+console.count('key');
+console.countReset('key');
+console.count('key');
+

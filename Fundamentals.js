@@ -53,3 +53,32 @@ do{
     console.log(j);
     j++;
 }while(j < 5);
+for (const value of [1, 2, 3]) {
+    console.log(value);
+}
+for (const value of 'acbc') {
+    console.log(value);
+}
+for (const key in student) {
+    console.log(key, student[key]);
+}
+const condition = true;
+// condition = false, null
+if (condition) {
+    console.log("Boolean True");
+}
+else{
+    console.log("Boolean False");
+}
+const value = 10;
+switch(value) {
+    case 1:
+        console.log("It was 1");
+        break
+    case 5:
+        console.log("It was 5");
+        break
+    default:
+        console.log("It was default");
+}
+console.log(value % 2 == 0 ? "Even" : "Odd" );
