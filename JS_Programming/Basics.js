@@ -59,4 +59,3 @@ console.count('key');
 console.count('key');
 console.countReset('key');
 console.count('key');
-
