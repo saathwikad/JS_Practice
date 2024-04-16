@@ -76,6 +76,7 @@ console.log(object.priceAny ?? '123');
 //Optimal Chaining Operator
 console.log(object.reviews?.goodreads?.value + (object.reviews?.goodread?.value ?? 0));
 //Array methods -> Map, filter, reduce
+
 const newExample = {
     bookDetails : [
     {
@@ -98,11 +99,10 @@ const newExample = {
     },
 ],
 };
-console.log(getBookData());
-const {bookDetails} = getBookData();
-function getBookData(bookId) {
-    return bookId.author;
+function getBookData() {
+    return newExample;
 }
+const {bookDetails} = getBookData();
 //map
 const onlyTitles = bookDetails.map((book) => book.name);
 console.log(onlyTitles);
@@ -113,16 +113,59 @@ const myBooks = bookDetails.map((book) => {
     };
 });
 console.log(myBooks);
+function getPrice(bookId){
+    return bookId.price;
+}
 
 const alsoMyBooks = bookDetails.map((book) => ({
         title : book.name,
         writer: book.author,
-        priceCount : getBookData(book),
+        priceCount : getPrice(book),
 })
 );
 console.log(alsoMyBooks);
 
 //filter
-const onlyAffordable = bookDetails.filter((book) => book.price <= 200);
+const onlyAffordable = bookDetails
+.filter((book) => book.price <= 200)
+.filter((book) => (book.id == 0))
+.map((book) => book.author);
 console.log(onlyAffordable);
+
+//reduce
+const totalCost = bookDetails
+.filter((book) => book.price <= 200)
+.reduce((cost, book) => cost + book.price, 23.5);
+console.log(totalCost);
+
+//sort -> mutates arrays
+const prices = bookDetails
+.map((book) => book.price);
+console.log(prices);
+//const sortedPrices = prices.sort((a, b) => b - a); -> decreasing order
+const sortedPrices = prices.sort((a, b) => a - b); // -> increasing order
+console.log(sortedPrices, prices);
+
+//immutatble approach
+const alsoPrices = bookDetails
+.map((book) => book.price);
+console.log(prices);
+const mySortedPrices = alsoPrices.slice().sort((a, b) => b - a); //-> decreasing order
+const alsoSortedPrices = alsoPrices.slice().sort((a, b) => a - b); // -> increasing order
+console.log(mySortedPrices, alsoSortedPrices, alsoPrices);
+
+console.log(fetch("https://jsonplaceholder.typicode.com/todos"));
+fetch("https://jsonplaceholder.typicode.com/todos")
+.then((res) => res.json())
+.then((data) => console.log(data));
+ 
+async function getTodos() {
+    const res = await fetch("https://jsonplaceholder.typicode.com/todos");
+    const data = await res.json();
+    console.log(data);
+}
+const todos = getTodos();
+console.log(todos);
+
+
 
